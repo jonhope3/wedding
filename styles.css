@@ -28,30 +28,74 @@ p {
     top: 0;
     width: 100%;
     background-color: #b2ebf2; /* Light seafoam blue */
-    padding: 10px 0;
+    padding: 10px 20px;
     z-index: 10;
-    text-align: center;
+    display: flex;
+    justify-content: center; /* Center nav list on desktop */
+    align-items: center;
 }
 
-.navbar ul {
+.navbar .menu-toggle {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    position: absolute; /* Position it at the top right */
+    right: 20px;
+    top: 10px;
+}
+
+.navbar .menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #2e3d48; /* Dark slate */
+}
+
+/* Navbar List */
+.nav-list {
     margin: 0;
     padding: 0;
     list-style: none;
+    display: flex; /* Default to flex for desktop */
 }
 
-.navbar ul li {
-    display: inline;
+.nav-list li {
     margin: 0 15px;
 }
 
-.navbar ul li a {
+.nav-list li a {
     color: #2e3d48; /* Dark slate */
     font-weight: bold;
     font-size: 1.2em;
 }
 
-.navbar ul li a:hover {
+.nav-list li a:hover {
     color: #009688; /* Seafoam green */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Hide links by default */
+        flex-direction: column; /* Stack links vertically */
+        background-color: #b2ebf2; /* Light seafoam blue */
+        position: absolute;
+        top: 60px; /* Below the navbar */
+        width: 100%;
+        left: 0;
+    }
+
+    .nav-list.active {
+        display: flex; /* Show links when active */
+    }
+
+    .nav-list li {
+        margin: 15px 0; /* Spacing for vertical stacking */
+    }
+
+    .navbar .menu-toggle {
+        display: block; /* Show hamburger menu */
+    }
 }
 
 /* Hero Section */
