@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding of [Couple's Names]</title>
+    <title>Wedding of Ashley & Jon</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lora&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,11 +11,7 @@
 
 <!-- Navigation Bar -->
 <nav class="navbar">
-    <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
+    <div class="logo">Ashley & Jon</div>
     <ul class="nav-list">
         <li><a href="#home">Home</a></li>
         <li><a href="#story">Our Story</a></li>
@@ -24,12 +20,27 @@
         <li><a href="#registry">Registry</a></li>
         <li><a href="#gallery">Gallery</a></li>
     </ul>
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar1"></span>
+        <span class="bar2"></span>
+        <span class="bar3"></span>
+    </div>
 </nav>
+
+<!-- Mobile Nav List -->
+<ul class="nav-list-mobile" id="mobile-nav">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#details">Wedding Details</a></li>
+    <li><a href="#rsvp">RSVP</a></li>
+    <li><a href="#registry">Registry</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+</ul>
 
 <!-- Hero Section -->
 <header class="hero" id="home">
     <div class="hero-content">
-        <h1>[Bride's Name] & [Groom's Name]</h1>
+        <h1>Ashley & Jon</h1>
         <p>Join us for our special day</p>
         <a href="#rsvp" class="button">RSVP</a>
     </div>
@@ -47,6 +58,24 @@
     <h2>Wedding Details</h2>
     <p>Date: October 12, 2024</p>
     <p>Location: Beautiful Venue, City</p>
+    <p>Time: 4:00 PM</p>
+</section>
+
+<!-- RSVP Section -->
+<section class="rsvp" id="rsvp">
+    <h2>RSVP</h2>
+    <p>Please let us know if you can join us!</p>
+    <p>Button/Link</p>
+</section>
+
+<!-- Registry Section -->
+<section class="registry" id="registry">
+    <h2>Registry</h2>
+    <p>Your presence is the greatest gift. If you wish to bless us further, here’s where we are registered:</p>
+    <ul>
+        <li><a href="https://www.example.com/registry1" target="_blank">Store 1 &#8599;</a></li>
+        <li><a href="https://www.example.com/registry2" target="_blank">Store 2 &#8599;</a></li>
+    </ul>
 </section>
 
 <!-- Gallery Section -->
@@ -67,8 +96,19 @@
 
 <!-- Footer -->
 <footer class="footer">
-    <p>&copy; 2024 [Bride & Groom's Name] | Built with Love</p>
+    <p>&copy; 2024 Ashley & Jon | Built with Love</p>
 </footer>
+
+<!-- JavaScript -->
+<script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navListMobile = document.getElementById('mobile-nav');
+
+    mobileMenu.addEventListener('click', () => {
+        navListMobile.classList.toggle('active');
+        mobileMenu.classList.toggle('menu-active');
+    });
+</script>
 
 </body>
 </html>
