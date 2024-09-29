@@ -207,16 +207,9 @@
 			} , { offset: '90%' } );
 		}
 	};
-
-	// Parallax
-	var parallax = function() {
-		$(window).stellar();
-	};
-
 	
 	$(function(){
 		mobileMenuOutsideClick();
-		parallax();
 		offcanvasMenu();
 		burgerMenu();
 		contentWayPoint();
