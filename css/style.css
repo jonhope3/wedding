@@ -16,9 +16,27 @@ html {
 }
 
 .parallax-bg {
-  background: url('../images/bg1.jpg') no-repeat center center fixed;
+  position: relative; /* Positioning context for the pseudo-element */
   height: 100%; /* Full height */
-  background-size: cover; /* Ensures the background covers the entire area */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.parallax-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../images/bg1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.69; /* SET THE OPACITY for the background image */
+  z-index: 1;
+}
+
+.parallax-bg > * {
+  position: relative; /* Ensure content is above the background */
+  z-index: 2; /* Content above the pseudo-element */
 }
 
 body {
